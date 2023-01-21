@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ÖDEV 1:
+https://icon-library.com/images/light-off-icon/light-off-icon-4.jpg
+https://icon-library.com/images/light-off-icon/light-off-icon-6.jpg
+
+resimlerini indirin ve html belgenize dahil edin daha sonra kapalı olan ampülü 
+img etiketine verin. 
+Bu img etiketine mouseover ve mouseleave eventlerini (olay dinleyicileri) vererek
+fare imleci resim ile temas kurduğunda ampulün yanması temas bittiğinde ise tekrar kapanması.
+
+İpucu: setAttribute araştır.
+
+ÖDEV 2:
+Ad, yaş, şifre alan bir input oluşturun ve bunların algoritma kontrollerini sağlayın. 
+Eğer algoritmada herhangi bir sıkıntı yoksa bu eklenen verileri bir user objesine pushlayın
+daha sonra bu verileri bir html etiketine alt alta gelecek şekilde yazdırın.
+
+ÖDEV 3: 
+4 tane a etiketi oluşturun ve querySelectorAll ile bunların hepsini yakalayın. 
+Gelen verilerden yalnızca 2. a etiketine bir tıklama eventi atayın ve bunu consola yazdırın.
+
+
+ÖDEV 4: 
+{ad: String, derece: Number} bu formata uygun en az 10 tane olacak şekilde ve dereceleri
+10 ile 100 arasında olacak şekilde user objelerini oluşturun. Html tarafında arama inputu ve bir tane tetikleyici
+buton oluşturun. Butona tıklandığı zaman derecesi 50'den yüksek olan kişileri herhangi bir 
+html etiketine alt alta gelecek şekilde sıralayın.
+
+ÖDEV 5: 
+Kullanıcının interneti gittiğinde javascript ile bunu algılayın ve html etiketine Şu an çevrimdışısınız
+yazısını yazdırın.
+
+Kullanıcının internetinin geri gelmesi durumunda bir önceki uyarı mesajını kaldırın.
+
+İpucu: Javascript events, remove
+
+ÖDEV 6:
+Array içinde olan user objelerinde ismi mehmet, cinsiyeti erkek ve yaşı 30dan küçük olan kişiyi bulun
+
+ÖDEV 7:
+10 tane meyve içeren bir array oluşturun ve meyvelerin ismini consola yazdıran bir döngü yaratın. 
+* Döngü 6. veya 7. dizindeyse consola meyveyi yazdırmayın, döngü 9. dizine ulaşmış ise döngüyü sonlandırın.  
+
+ÖDEV 8:
+bir html etiketinde "Adınız:" yazan bir yapı oluşturun ardından input oluşturun ve o inputtan kullanıcının ismini alın,
+kullanıcı her ismini değiştirdiğinde 5 saniye sonra html etiketi kullanıcının seçmiş olduğu isim ile güncellensin.
+
+ÖDEV 9: 
+* Array içinde olan user objelerinde { isBanned: Boolean, name: String, level: Number, previousNames: Array.String, clans: Array.Object, createdAt: String}
+formatında olacak şekilde user objeleri oluşturun.
+* createdAt için normal tarih objesi kullanılmayacak düz bir şekilde kendiniz string olarak vereceksiniz.
+* createdAt için tarih formatı şu şekilde olacak: "2022-04-15" vb.
+
+* HTML belgesinde 5 tane buton oluştur ve:
+1. butona "en yüksek levelleri göster" adını ver ve tıklandığı zaman en yüksek lv oyuncuları sırala
+2. butona "isim değiştirenler" adını ver ve tıklandığı zaman onları döndür. Not: previousNames de bulunan isimler kullanıcının daha önceden isim değiştirdiğine işaret eder.
+3. butona "Klanlı olanlar" adını ver ve tıklandığı zaman klanı olan oyuncuları klanlarıyla birlikte döndür. 
+4. butona "Yasaklananlar" adını ver ve tıklandığı zaman yasaklanan oyuncuları döndür.
+5. butona "Eski hesaplar" adını ver ve tıklandığı zaman oluşturulma tarihi 2022 yılından küçük olan oyuncuları döndür.
+
+Araştırma Ödevi:
+sort, Math, onchange bunları araştır.
+ -->
+<h3 id="baglanti"></h3>
+ <img id="imagine" onmouseover="goster()"  onmouseleave="gosterme()" src="./kapaliampul.jpg" alt=""><br><br><br>
+<form action="" method="post">
+
+    <input id="isim" type="text" placeholder="İsim"><br><br>
+
+<input id="yas" type="text" placeholder="Yaş"><br><br>
+
+<input id="sifre" type="password" placeholder="Şifre"><br>
+
+<input id="formSubmit" type="submit" > 
+
+
+</form>
+<p id="paragraf"></p>
+    
+    <a href="#" >1.Etiket</a><br>
+    <a href="#" onclick="agetir()">2.Etiket</a><br>
+    <a href="#">3.Etiket</a><br>
+    <a href="#">4.Etiket</a><br><br><br>
+    <input type="text" placeholder="Search"><br><br>
+    <button id="butonid"> Verileri getir</button><br><br>
+    <p id="dorduncusoru"></p>
+<p id="adiniz">Adınız:</p>
+<input id="adgir" type="text">
+<button onclick="ismiyazdir()"> Tıkla</button><br><br>
+
+<button onclick="siralama()">en yüksek levelleri göster</button>
+<button onclick="previousyazdir()">isim değiştirenler</button>
+<button onclick="klanliyazdir()">Klanlı olanlar</button>
+<button onclick="yasakliyazdir()">Yasaklananlar</button>
+<button onclick="tarihyazdir()">Eski hesaplar</button>
+<p id="arrays"></p>
+
+    <script src="main.js"></script>
+</body>
+</html>
